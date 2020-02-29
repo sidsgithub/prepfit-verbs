@@ -14,7 +14,7 @@ func (u ProgramResource) WebService() *restful.WebService {
 
 	tags := []string{"programs"}
 
-	ws.Route(ws.GET("/").To(u.FindAllPrograms).
+	ws.Route(ws.GET("/").To(u.FindAllPrograms).	
 		// docs
 		Doc("get all programs").
 		Metadata(restfulspec.KeyOpenAPITags, tags).
@@ -35,7 +35,6 @@ func (u ProgramResource) WebService() *restful.WebService {
 		Doc("create a program").
 		Metadata(restfulspec.KeyOpenAPITags, tags).
 		Reads(Program{})) // from the request
-
-
+	
 	return ws
 }
